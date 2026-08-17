@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>数字スライドパズル</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>数字スライドパズル</h1>
+
+    <section id="auth">
+
+        <h2>ログイン</h2>
+
+        <input
+            id="username"
+            type="text"
+            placeholder="ユーザー名">
+
+        <input
+            id="password"
+            type="password"
+            placeholder="パスワード">
+
+        <div>
+            <button onclick="login()">ログイン</button>
+            <button onclick="register()">新規登録</button>
+        </div>
+
+        <p id="authMessage"></p>
+
+    </section>
+
+
+    <section id="game" class="hidden">
+
+        <div class="user-info">
+            ログイン中：
+            <span id="currentUser"></span>
+
+            <button onclick="logout()">ログアウト</button>
+        </div>
+
+        <div class="status">
+
+            <div>
+                時間：
+                <span id="timer">0</span> 秒
+            </div>
+
+            <div>
+                手数：
+                <span id="moves">0</span>
+            </div>
+
+        </div>
+
+        <div id="board"></div>
+
+        <button
+            class="start-button"
+            onclick="startGame()">
+            ゲーム開始
+        </button>
+
+        <p id="gameMessage"></p>
+
+
+        <h2>ランキング</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>順位</th>
+                    <th>ユーザー</th>
+                    <th>時間</th>
+                    <th>手数</th>
+                </tr>
+            </thead>
+
+            <tbody id="ranking"></tbody>
+
+        </table>
+
+    </section>
+
+</div>
+
+<script src="game.js"></script>
+
+</body>
+
+</html>
